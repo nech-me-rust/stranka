@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Nature-inspired color palette */
+    --background: 0 0% 100%;
+    --foreground: 157 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 157 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 157 25% 15%;
+
+    /* Deep forest green as primary */
+    --primary: 157 45% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 157 45% 35%;
+
+    /* Soft sage green for secondary */
+    --secondary: 157 25% 85%;
+    --secondary-foreground: 157 45% 25%;
+
+    /* Muted earth tones */
+    --muted: 157 15% 92%;
+    --muted-foreground: 157 15% 45%;
+
+    /* Warm accent - golden yellow like sunlight through leaves */
+    --accent: 45 95% 75%;
+    --accent-foreground: 157 45% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 157 15% 88%;
+    --input: 157 15% 95%;
+    --ring: 157 45% 25%;
+
+    --radius: 0.75rem;
+    
+    /* Nature-inspired gradients */
+    --gradient-forest: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-sunrise: linear-gradient(135deg, hsl(var(--accent)), hsl(45 100% 85%));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--muted)), hsl(var(--secondary)));
+    
+    /* Organic shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-nature: 0 8px 32px -8px hsl(157 45% 25% / 0.2);
+    
+    /* Smooth transitions */
+    --transition-organic: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-grow: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark forest theme */
+    --background: 157 25% 8%;
+    --foreground: 157 15% 90%;
+
+    --card: 157 25% 10%;
+    --card-foreground: 157 15% 90%;
+
+    --popover: 157 25% 10%;
+    --popover-foreground: 157 15% 90%;
+
+    --primary: 157 45% 45%;
+    --primary-foreground: 157 25% 8%;
+    --primary-glow: 157 45% 55%;
+
+    --secondary: 157 25% 15%;
+    --secondary-foreground: 157 15% 90%;
+
+    --muted: 157 25% 12%;
+    --muted-foreground: 157 15% 65%;
+
+    --accent: 45 85% 65%;
+    --accent-foreground: 157 25% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 157 15% 90%;
+
+    --border: 157 25% 15%;
+    --input: 157 25% 12%;
+    --ring: 157 45% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
