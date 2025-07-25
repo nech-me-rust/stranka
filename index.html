@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.3.7.2 (Linux)"/>
+	<meta name="created" content="2025-07-25T13:06:24.986908878"/>
+	<meta name="changed" content="2025-07-25T13:07:29.503640275"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0in">
+&lt;!DOCTYPE html&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;html lang=&quot;cs&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;head&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;meta
+charset=&quot;UTF-8&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;meta
+name=&quot;viewport&quot; content=&quot;width=device-width,
+initial-scale=1.0&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;title
+data-lang-key=&quot;metaTitle&quot;&gt;Nech mě růst&lt;/title&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;script
+src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;link
+rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;link
+rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;
+crossorigin&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;link
+href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap&quot;
+rel=&quot;stylesheet&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;style&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        /* Custom
+styles to complement Tailwind */</p>
+<p style="line-height: 100%; margin-bottom: 0in">        body {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+font-family: 'Inter', sans-serif;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+background-color: #FBF9F4; /* A warm, natural off-white */</p>
+<p style="line-height: 100%; margin-bottom: 0in">            color:
+#3a4d39; /* Deep forest green for text */</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.font-display {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+font-family: 'Playfair Display', serif;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.nature-gradient {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+background: linear-gradient(to right, #4A5D23, #6A823A); /* Gradient
+of earthy greens */</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        .btn-primary
+{</p>
+<p style="line-height: 100%; margin-bottom: 0in">            @apply
+bg-[#4A5D23] text-white font-bold py-3 px-6 rounded-lg shadow-md
+hover:bg-[#3a4d39] transition-transform duration-300 ease-in-out
+transform hover:-translate-y-1;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.btn-secondary {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            @apply
+bg-transparent border-2 border-[#4A5D23] text-[#4A5D23] font-bold
+py-3 px-6 rounded-lg hover:bg-[#4A5D23] hover:text-white
+transition-colors duration-300;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.calendar-day.has-event {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+background-color: #D3E4CD; /* Light moss green */</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+border-radius: 50%;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+font-weight: bold;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            cursor:
+pointer;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.calendar-day.selected {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+background-color: #4A5D23;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            color:
+white;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+border-radius: 50%;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        /* Simple
+fade-in animation for sections */</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.fade-in-section {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            opacity:
+0;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+transform: translateY(20px);</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+.fade-in-section.is-visible {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            opacity:
+1;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+transform: translateY(0);</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;/style&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;/head&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;body
+class=&quot;antialiased&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;!-- Header
+--&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;header
+class=&quot;bg-white/80 backdrop-blur-md sticky top-0 z-50
+shadow-sm&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;nav
+class=&quot;container mx-auto px-6 py-4 flex justify-between
+items-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;text-2xl font-bold text-[#4A5D23] font-display&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#&quot;&gt;Nech mě růst&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;hidden md:flex items-center space-x-8&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#about&quot; class=&quot;text-gray-700
+hover:text-[#4A5D23] transition-colors&quot;
+data-lang-key=&quot;navAbout&quot;&gt;O nás&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#calendar&quot; class=&quot;text-gray-700
+hover:text-[#4A5D23] transition-colors&quot;
+data-lang-key=&quot;navCalendar&quot;&gt;Kalendář&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#gallery&quot; class=&quot;text-gray-700
+hover:text-[#4A5D23] transition-colors&quot;
+data-lang-key=&quot;navGallery&quot;&gt;Galerie&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#contact&quot; class=&quot;text-gray-700
+hover:text-[#4A5D23] transition-colors&quot;
+data-lang-key=&quot;navContact&quot;&gt;Kontakt&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;flex items-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                
+&lt;div class=&quot;flex items-center border border-gray-300
+rounded-full&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;button id=&quot;lang-cs&quot; class=&quot;px-3 py-1 text-sm
+rounded-full bg-[#4A5D23] text-white&quot;&gt;CZ&lt;/button&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;button id=&quot;lang-en&quot; class=&quot;px-3 py-1 text-sm
+rounded-full&quot;&gt;EN&lt;/button&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;button id=&quot;mobile-menu-button&quot; class=&quot;md:hidden
+ml-4 p-2&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;svg class=&quot;w-6 h-6 text-[#4A5D23]&quot; fill=&quot;none&quot;
+stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;
+xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path
+stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+stroke-width=&quot;2&quot; d=&quot;M4 6h16M4 12h16m-7
+6h7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/button&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/nav&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!--
+Mobile Menu --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;div
+id=&quot;mobile-menu&quot; class=&quot;hidden md:hidden bg-white/90&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;a
+href=&quot;#about&quot; class=&quot;block py-2 px-6 text-sm
+text-gray-700 hover:bg-gray-100&quot; data-lang-key=&quot;navAbout&quot;&gt;O
+nás&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;a
+href=&quot;#calendar&quot; class=&quot;block py-2 px-6 text-sm
+text-gray-700 hover:bg-gray-100&quot;
+data-lang-key=&quot;navCalendar&quot;&gt;Kalendář&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;a
+href=&quot;#gallery&quot; class=&quot;block py-2 px-6 text-sm
+text-gray-700 hover:bg-gray-100&quot;
+data-lang-key=&quot;navGallery&quot;&gt;Galerie&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;a
+href=&quot;#contact&quot; class=&quot;block py-2 px-6 text-sm
+text-gray-700 hover:bg-gray-100&quot;
+data-lang-key=&quot;navContact&quot;&gt;Kontakt&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;/header&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;main&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!-- Hero
+Section --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;section
+class=&quot;relative h-[60vh] md:h-[80vh] flex items-center
+justify-center text-center text-white overflow-hidden&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;absolute inset-0 bg-black/50 z-10&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;img
+src=&quot;https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&amp;w=2560&amp;auto=format&amp;fit=crop&quot;
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">                
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/1920x1080/4A5D23/FBF9F4?text=Forest';&quot;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                
+alt=&quot;Hluboký les s prosvítajícím sluncem&quot;
+class=&quot;absolute inset-0 w-full h-full object-cover&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;relative z-20 px-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;h1
+class=&quot;text-4xl md:text-7xl font-bold font-display mb-4&quot;
+data-lang-key=&quot;heroTitle&quot;&gt;Nech mě růst&lt;/h1&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;p
+class=&quot;text-lg md:text-2xl max-w-2xl mx-auto&quot;
+data-lang-key=&quot;heroSubtitle&quot;&gt;Propojujeme děti s
+přírodou. A občas i dospělé se sebou samými.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#calendar&quot; class=&quot;mt-8 inline-block btn-primary&quot;
+data-lang-key=&quot;heroCta&quot;&gt;Naše akce&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/section&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!--
+About Section --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;section
+id=&quot;about&quot; class=&quot;py-20 md:py-32 fade-in-section&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;container mx-auto px-6 text-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;h2
+class=&quot;text-3xl md:text-4xl font-bold font-display mb-6&quot;
+data-lang-key=&quot;aboutTitle&quot;&gt;Kdo jsme a proč to (sakra)
+děláme?&lt;/h2&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;p
+class=&quot;max-w-3xl mx-auto text-lg text-gray-700 mb-12&quot;
+data-lang-key=&quot;aboutText&quot;&gt;Jsme parta nadšenců, kteří
+věří, že nejlepší Wi-Fi je v lese. Naším posláním je
+odlepit děti (a často i jejich rodiče) od obrazovek a ukázat jim,
+že největší dobrodružství číhá za nejbližším pařezem.
+Organizujeme lesní kroužky, příměstské tábory a workshopy, kde
+se učíme poznávat stromy, stavět domečky pro skřítky a občas
+se prostě jen tak válíme v mechu. Protože růst se má v klidu a
+s kořeny pevně v zemi.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;a
+href=&quot;#contact&quot; class=&quot;btn-secondary&quot;
+data-lang-key=&quot;aboutCta&quot;&gt;Podpořte nás&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/section&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!--
+Calendar Section --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;section
+id=&quot;calendar&quot; class=&quot;py-20 md:py-32 bg-white
+fade-in-section&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;container mx-auto px-6&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;text-center mb-12&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;h2 class=&quot;text-3xl md:text-4xl font-bold font-display mb-4&quot;
+data-lang-key=&quot;calendarTitle&quot;&gt;Kalendář akcí&lt;/h2&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;p class=&quot;max-w-2xl mx-auto text-gray-600&quot;
+data-lang-key=&quot;calendarSubtitle&quot;&gt;Tady se to děje.
+Vyberte si datum a přidejte se k nám. Holínky doporučeny, dobrá
+nálada povinná.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;flex flex-col lg:flex-row gap-8&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;!-- Calendar Grid --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;w-full lg:w-1/2 bg-gray-50 p-6 rounded-xl
+shadow-lg&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div class=&quot;flex justify-between items-center mb-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;button id=&quot;prev-month&quot; class=&quot;p-2
+rounded-full hover:bg-gray-200&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;svg class=&quot;w-6 h-6&quot; fill=&quot;none&quot;
+stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path
+stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+stroke-width=&quot;2&quot; d=&quot;M15 19l-7-7 7-7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;/button&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;h3 id=&quot;month-year&quot; class=&quot;text-xl
+font-bold&quot;&gt;&lt;/h3&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;button id=&quot;next-month&quot; class=&quot;p-2
+rounded-full hover:bg-gray-200&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;svg class=&quot;w-6 h-6&quot; fill=&quot;none&quot;
+stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path
+stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+stroke-width=&quot;2&quot; d=&quot;M9 5l7 7-7 7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;/button&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div id=&quot;calendar-grid&quot; class=&quot;grid grid-cols-7
+gap-2 text-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;!-- Day names will be injected by JS --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;!-- Event Details --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;w-full lg:w-1/2 p-6 rounded-xl&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div id=&quot;event-details&quot; class=&quot;sticky top-28&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;h3 class=&quot;text-2xl font-bold mb-4&quot;
+data-lang-key=&quot;eventDetailTitle&quot;&gt;Vyberte den&lt;/h3&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;p id=&quot;event-placeholder&quot; class=&quot;text-gray-600&quot;
+data-lang-key=&quot;eventDetailPlaceholder&quot;&gt;Kliknutím na
+zvýrazněné datum v kalendáři zobrazíte podrobnosti o akci.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;div id=&quot;event-content&quot; class=&quot;hidden&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;h4 id=&quot;event-title&quot; class=&quot;text-2xl
+font-bold text-[#4A5D23] mb-2&quot;&gt;&lt;/h4&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;p id=&quot;event-time&quot; class=&quot;text-gray-500
+mb-4&quot;&gt;&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;p id=&quot;event-description&quot; class=&quot;mb-6&quot;&gt;&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+           &lt;a id=&quot;event-register-btn&quot; href=&quot;#&quot;
+class=&quot;btn-primary&quot; data-lang-key=&quot;registerBtn&quot;&gt;Registrovat
+se&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+       &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/section&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!--
+Gallery Section --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;section
+id=&quot;gallery&quot; class=&quot;py-20 md:py-32 fade-in-section&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;container mx-auto px-6&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;text-center mb-12&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;h2 class=&quot;text-3xl md:text-4xl font-bold font-display mb-4&quot;
+data-lang-key=&quot;galleryTitle&quot;&gt;Okamžiky z lesa&lt;/h2&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;p class=&quot;max-w-2xl mx-auto text-gray-600&quot;
+data-lang-key=&quot;gallerySubtitle&quot;&gt;Pár fotek, které
+řeknou víc než tisíc slov. Většinou říkají: &quot;Jé,
+bláto!&quot;.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;grid grid-cols-2 md:grid-cols-4 gap-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;grid gap-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1518933538101-a1a8753566b7?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x600/6A823A/FFF?text=Děti+v+lese';&quot;
+alt=&quot;Děti staví domeček z větví&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1532635026-113134514553?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x500/6A823A/FFF?text=Workshop';&quot;
+alt=&quot;Detail rukou pracujících se dřevem&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;grid gap-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x500/6A823A/FFF?text=Táborák';&quot;
+alt=&quot;Děti u táboráku&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1598171722839-3a727c315a6b?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x600/6A823A/FFF?text=Objevování';&quot;
+alt=&quot;Dítě s lupou zkoumá list&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;grid gap-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1516298252538-a72208186259?q=80&amp;w=1964&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x600/6A823A/FFF?text=Tým';&quot;
+alt=&quot;Skupina dětí a vedoucích se směje&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1542840410-241062931365?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x500/6A823A/FFF?text=Příroda';&quot;
+alt=&quot;Detail mechu a hub&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;div class=&quot;grid gap-4&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x500/6A823A/FFF?text=Hra';&quot;
+alt=&quot;Děti hrají hru v lese&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;div&gt;&lt;img class=&quot;h-auto max-w-full rounded-lg
+shadow-lg hover:scale-105 transition-transform&quot;
+src=&quot;https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&amp;w=2400&amp;auto=format&amp;fit=crop&quot;
+onerror=&quot;this.onerror=null;this.src='https://placehold.co/400x600/6A823A/FFF?text=Krajina';&quot;
+alt=&quot;Krásná lesní krajina&quot;&gt;&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/section&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;!--
+Contact Section --&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;section
+id=&quot;contact&quot; class=&quot;py-20 md:py-32 bg-white
+fade-in-section&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;div
+class=&quot;container mx-auto px-6 text-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;h2
+class=&quot;text-3xl md:text-4xl font-bold font-display mb-6&quot;
+data-lang-key=&quot;contactTitle&quot;&gt;Spojte se s námi&lt;/h2&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;p
+class=&quot;max-w-3xl mx-auto text-lg text-gray-700 mb-8&quot;
+data-lang-key=&quot;contactText&quot;&gt;Máte dotaz? Chcete nás
+podpořit? Nebo nám jen poslat virtuální šišku? Jsme tu pro vás.
+Nejrychleji nás najdete na Instagramu, ale e-mail taky čteme (když
+zrovna nejsme po kolena v potoce).&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;flex justify-center items-center space-x-6 mb-12&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;a href=&quot;mailto:info@nechmerust.org&quot;
+class=&quot;text-gray-700 hover:text-[#4A5D23]
+transition-colors&quot;&gt;info@nechmerust.org&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;a href=&quot;https://www.instagram.com/nech_me_rust&quot;
+target=&quot;_blank&quot; class=&quot;text-gray-700
+hover:text-[#4A5D23] transition-colors&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                    
+   &lt;svg class=&quot;w-8 h-8&quot; fill=&quot;currentColor&quot;
+viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 2.163c3.204 0
+3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069
+1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919
+4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225
+1.664-4.771 4.919-4.919 1.266.058 1.644.07 4.85.07m0-2.163c-3.259
+0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073
+1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98
+1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2
+6.78-2.618
+6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0
+5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162
+6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209
+0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796
+0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645
+1.441-1.44-.645-1.44-1.441-1.44z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;/a&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                &lt;div
+class=&quot;mt-12 border-t pt-8&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;h3 class=&quot;text-xl font-bold mb-4&quot;
+data-lang-key=&quot;supportTitle&quot;&gt;Chcete nás podpořit?&lt;/h3&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;p class=&quot;max-w-xl mx-auto text-gray-600&quot;
+data-lang-key=&quot;supportText&quot;&gt;Každý příspěvek nám
+pomáhá sázet nová semínka radosti. Děkujeme!&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">                   
+&lt;p class=&quot;mt-4 font-mono bg-gray-100 p-4 rounded-lg
+inline-block&quot;&gt;Č.Ú.: 123456789/0100&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+&lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/section&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;/main&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;!-- Footer
+--&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;footer
+class=&quot;nature-gradient text-white&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;div
+class=&quot;container mx-auto px-6 py-8 text-center&quot;&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+&lt;p&gt;&amp;copy; &lt;span id=&quot;footer-year&quot;&gt;&lt;/span&gt;
+Nech mě růst z.s. Všechna práva vyhrazena (ale o borůvky se
+dělíme).&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            &lt;p
+class=&quot;text-sm opacity-80 mt-2&quot;
+data-lang-key=&quot;footerMadeWith&quot;&gt;S láskou a mechem
+vytvořeno v lese.&lt;/p&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        &lt;/div&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;/footer&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;script&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // --- START OF
+JAVASCRIPT ---</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // ---
+TRANSLATION DATA &amp; LOGIC ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+translations = {</p>
+<p style="line-height: 100%; margin-bottom: 0in">        cs: {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+metaTitle: &quot;Nech mě růst | Propojujeme děti s přírodou&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navAbout: &quot;O nás&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navCalendar: &quot;Kalendář&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navGallery: &quot;Galerie&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navContact: &quot;Kontakt&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+heroTitle: &quot;Nech mě růst&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+heroSubtitle: &quot;Propojujeme děti s přírodou. A občas i
+dospělé se sebou samými.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">            heroCta:
+&quot;Naše akce&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutTitle: &quot;Kdo jsme a proč to (sakra) děláme?&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutText: &quot;Jsme parta nadšenců, kteří věří, že nejlepší
+Wi-Fi je v lese. Naším posláním je odlepit děti (a často i
+jejich rodiče) od obrazovek a ukázat jim, že největší
+dobrodružství číhá za nejbližším pařezem. Organizujeme lesní
+kroužky, příměstské tábory a workshopy, kde se učíme poznávat
+stromy, stavět domečky pro skřítky a občas se prostě jen tak
+válíme v mechu. Protože růst se má v klidu a s kořeny pevně v
+zemi.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutCta: &quot;Podpořte nás&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarTitle: &quot;Kalendář akcí&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarSubtitle: &quot;Tady se to děje. Vyberte si datum a přidejte
+se k nám. Holínky doporučeny, dobrá nálada povinná.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventDetailTitle: &quot;Vyberte den&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventDetailPlaceholder: &quot;Kliknutím na zvýrazněné datum v
+kalendáři zobrazíte podrobnosti o akci.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+registerBtn: &quot;Registrovat se&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+galleryTitle: &quot;Okamžiky z lesa&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+gallerySubtitle: &quot;Pár fotek, které řeknou víc než tisíc
+slov. Většinou říkají: \&quot;Jé, bláto!\&quot;.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+contactTitle: &quot;Spojte se s námi&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+contactText: &quot;Máte dotaz? Chcete nás podpořit? Nebo nám jen
+poslat virtuální šišku? Jsme tu pro vás. Nejrychleji nás
+najdete na Instagramu, ale e-mail taky čteme (když zrovna nejsme po
+kolena v potoce).&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+supportTitle: &quot;Chcete nás podpořit?&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+supportText: &quot;Každý příspěvek nám pomáhá sázet nová
+semínka radosti. Děkujeme!&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+footerMadeWith: &quot;S láskou a mechem vytvořeno v lese.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayNames: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+monthNames: [&quot;Leden&quot;, &quot;Únor&quot;, &quot;Březen&quot;,
+&quot;Duben&quot;, &quot;Květen&quot;, &quot;Červen&quot;,
+&quot;Červenec&quot;, &quot;Srpen&quot;, &quot;Září&quot;,
+&quot;Říjen&quot;, &quot;Listopad&quot;, &quot;Prosinec&quot;],</p>
+<p style="line-height: 100%; margin-bottom: 0in">        },</p>
+<p style="line-height: 100%; margin-bottom: 0in">        en: {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+metaTitle: &quot;Let Me Grow | Connecting Children with Nature&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navAbout: &quot;About Us&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navCalendar: &quot;Calendar&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navGallery: &quot;Gallery&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+navContact: &quot;Contact&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+heroTitle: &quot;Let Me Grow&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+heroSubtitle: &quot;Connecting children with nature. And sometimes,
+adults with themselves.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">            heroCta:
+&quot;Our Events&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutTitle: &quot;Who We Are &amp; Why The Heck We Do It?&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutText: &quot;We are a group of enthusiasts who believe the best
+Wi-Fi is in the forest. Our mission is to peel children (and often
+their parents) away from screens and show them that the greatest
+adventure lurks behind the nearest tree stump. We organize forest
+clubs, suburban camps, and workshops where we learn to identify
+trees, build houses for elves, and sometimes just roll around in the
+moss. Because growth should happen peacefully, with roots firm in the
+ground.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+aboutCta: &quot;Support Us&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarTitle: &quot;Event Calendar&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarSubtitle: &quot;This is where it happens. Pick a date and
+join us. Rain boots recommended, good mood mandatory.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventDetailTitle: &quot;Select a day&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventDetailPlaceholder: &quot;Click on a highlighted date in the
+calendar to see event details.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+registerBtn: &quot;Register&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+galleryTitle: &quot;Moments from the Forest&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+gallerySubtitle: &quot;A few pictures that say more than a thousand
+words. They usually say: \&quot;Yay, mud!\&quot;.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+contactTitle: &quot;Get in Touch&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+contactText: &quot;Have a question? Want to support us? Or just send
+us a virtual pinecone? We're here for you. The fastest way to find us
+is on Instagram, but we also read our emails (when we're not
+knee-deep in a stream).&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+supportTitle: &quot;Want to support us?&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+supportText: &quot;Every contribution helps us plant new seeds of
+joy. Thank you!&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+footerMadeWith: &quot;Made with love and moss in the forest.&quot;,</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayNames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+monthNames: [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;,
+&quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;,
+&quot;August&quot;, &quot;September&quot;, &quot;October&quot;,
+&quot;November&quot;, &quot;December&quot;],</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    };</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    let currentLang
+= 'cs';</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    function
+setLanguage(lang) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">        currentLang
+= lang;</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+document.documentElement.lang = lang;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+document.querySelectorAll('[data-lang-key]').forEach(el =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+key = el.dataset.langKey;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            if
+(translations[lang][key]) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+el.textContent = translations[lang][key];</p>
+<p style="line-height: 100%; margin-bottom: 0in">            }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        });</p>
+<p style="line-height: 100%; margin-bottom: 0in">        
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Update
+language buttons style</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const csBtn
+= document.getElementById('lang-cs');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const enBtn
+= document.getElementById('lang-en');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        if (lang ===
+'cs') {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+csBtn.classList.add('bg-[#4A5D23]', 'text-white');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+enBtn.classList.remove('bg-[#4A5D23]', 'text-white');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        } else {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+enBtn.classList.add('bg-[#4A5D23]', 'text-white');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+csBtn.classList.remove('bg-[#4A5D23]', 'text-white');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Re-render
+calendar with correct language</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+renderCalendar(currentDate.getFullYear(), currentDate.getMonth());</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+updateEventDetailsForLangChange();</p>
+<p style="line-height: 100%; margin-bottom: 0in">    }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+document.getElementById('lang-cs').addEventListener('click', () =&gt;
+setLanguage('cs'));</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+document.getElementById('lang-en').addEventListener('click', () =&gt;
+setLanguage('en'));</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // --- EVENT
+DATA ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // IMPORTANT:
+Add your events here. The date format is 'YYYY-MM-DD'.</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const events = {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+'2025-08-16': {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            cs: {
+title: 'Noční bojovka pro odvážné', time: '20:00 - 22:00',
+description: 'Tradiční noční dobrodružství v lese. Budeme
+hledat poklad, poslouchat zvuky noci a opékat buřty. Pro děti od 8
+let.' },</p>
+<p style="line-height: 100%; margin-bottom: 0in">            en: {
+title: 'Night Game for the Brave', time: '8:00 PM - 10:00 PM',
+description: 'A traditional night adventure in the forest. We will
+search for treasure, listen to the sounds of the night, and roast
+sausages. For children aged 8 and up.' }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        },</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+'2025-09-07': {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            cs: {
+title: 'Dílna: Výroba lesních domečků', time: '14:00 - 17:00',
+description: 'Přijďte si s námi postavit bydlení pro lesní
+skřítky. Materiál zajištěn přímo z lesních zdrojů. Pro celou
+rodinu.' },</p>
+<p style="line-height: 100%; margin-bottom: 0in">            en: {
+title: 'Workshop: Building Forest Houses', time: '2:00 PM - 5:00 PM',
+description: 'Come build a home for forest elves with us. Materials
+provided directly from forest resources. For the whole family.' }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        },</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+'2025-09-21': {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            cs: {
+title: 'Podzimní houbaření s mykologem', time: '09:00 - 12:00',
+description: 'Naučte se poznávat jedlé i jedovaté houby pod
+vedením zkušeného mykologa. S sebou košík a nožík!' },</p>
+<p style="line-height: 100%; margin-bottom: 0in">            en: {
+title: 'Autumn Mushroom Foraging with a Mycologist', time: '9:00 AM -
+12:00 PM', description: 'Learn to identify edible and poisonous
+mushrooms under the guidance of an experienced mycologist. Bring a
+basket and a knife!' }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    };</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // --- CALENDAR
+LOGIC ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+monthYearEl = document.getElementById('month-year');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+calendarGridEl = document.getElementById('calendar-grid');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+prevMonthBtn = document.getElementById('prev-month');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+nextMonthBtn = document.getElementById('next-month');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventDetailsEl = document.getElementById('event-details');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventPlaceholderEl = document.getElementById('event-placeholder');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventContentEl = document.getElementById('event-content');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventTitleEl = document.getElementById('event-title');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventTimeEl = document.getElementById('event-time');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventDescriptionEl = document.getElementById('event-description');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+eventRegisterBtnEl = document.getElementById('event-register-btn');</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    let currentDate
+= new Date();</p>
+<p style="line-height: 100%; margin-bottom: 0in">    let
+selectedDateStr = null;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    function
+renderCalendar(year, month) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+calendarGridEl.innerHTML = '';</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+monthNames = translations[currentLang].monthNames;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+dayNames = translations[currentLang].dayNames;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+monthYearEl.textContent = `${monthNames[month]} ${year}`;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+firstDayOfMonth = new Date(year, month, 1).getDay();</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+daysInMonth = new Date(year, month + 1, 0).getDate();</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Add day
+names</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+dayNames.forEach(day =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+dayEl = document.createElement('div');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayEl.className = 'font-bold text-sm text-gray-500';</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayEl.textContent = day;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarGridEl.appendChild(dayEl);</p>
+<p style="line-height: 100%; margin-bottom: 0in">        });</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Add empty
+cells for padding days</p>
+<p style="line-height: 100%; margin-bottom: 0in">        for (let i =
+0; i &lt; firstDayOfMonth; i++) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarGridEl.appendChild(document.createElement('div'));</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Add day
+cells</p>
+<p style="line-height: 100%; margin-bottom: 0in">        for (let day
+= 1; day &lt;= daysInMonth; day++) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+dayEl = document.createElement('div');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayEl.textContent = day;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+dayEl.className = 'p-2 calendar-day';</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+dateStr = `${year}-${String(month + 1).padStart(2,
+'0')}-${String(day).padStart(2, '0')}`;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">            if
+(events[dateStr]) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+dayEl.classList.add('has-event');</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+dayEl.dataset.date = dateStr;</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+dayEl.addEventListener('click', () =&gt; showEventDetails(dateStr));</p>
+<p style="line-height: 100%; margin-bottom: 0in">            }</p>
+<p style="line-height: 100%; margin-bottom: 0in">            
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">            if
+(dateStr === selectedDateStr) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+dayEl.classList.add('selected');</p>
+<p style="line-height: 100%; margin-bottom: 0in">            }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+calendarGridEl.appendChild(dayEl);</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    function
+showEventDetails(dateStr) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Remove
+previous selection</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+prevSelected = document.querySelector('.calendar-day.selected');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        if
+(prevSelected) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+prevSelected.classList.remove('selected');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        // Add new
+selection</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+newSelected =
+document.querySelector(`.calendar-day[data-date=&quot;${dateStr}&quot;]`);</p>
+<p style="line-height: 100%; margin-bottom: 0in">        if
+(newSelected) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+newSelected.classList.add('selected');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+selectedDateStr = dateStr;</p>
+<p style="line-height: 100%; margin-bottom: 0in">        const
+eventData = events[dateStr][currentLang];</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        if
+(eventData) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventPlaceholderEl.classList.add('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventContentEl.classList.remove('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventTitleEl.textContent = eventData.title;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventTimeEl.textContent = eventData.time;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventDescriptionEl.textContent = eventData.description;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">            //
+IMPORTANT: Change the email address and subject line</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+email = &quot;registrace@nechmerust.org&quot;;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+subject = `Registrace na akci: ${eventData.title}`;</p>
+<p style="line-height: 100%; margin-bottom: 0in">            const
+body = `Dobrý den,\nmám zájem o registraci na akci
+&quot;${eventData.title}&quot; konanou dne ${dateStr}.\n\nJméno a
+příjmení:\nPočet osob:\n\nDěkuji.`;</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventRegisterBtnEl.href =
+`mailto:${email}?subject=${encodeURIComponent(subject)}&amp;body=${encodeURIComponent(body)}`;</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    function
+updateEventDetailsForLangChange() {</p>
+<p style="line-height: 100%; margin-bottom: 0in">        if
+(selectedDateStr &amp;&amp; events[selectedDateStr]) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+showEventDetails(selectedDateStr);</p>
+<p style="line-height: 100%; margin-bottom: 0in">        } else {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            // No
+event was selected, just hide the details</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventPlaceholderEl.classList.remove('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+eventContentEl.classList.add('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        }</p>
+<p style="line-height: 100%; margin-bottom: 0in">    }</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+prevMonthBtn.addEventListener('click', () =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+currentDate.setMonth(currentDate.getMonth() - 1);</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+renderCalendar(currentDate.getFullYear(), currentDate.getMonth());</p>
+<p style="line-height: 100%; margin-bottom: 0in">    });</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+nextMonthBtn.addEventListener('click', () =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+currentDate.setMonth(currentDate.getMonth() + 1);</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+renderCalendar(currentDate.getFullYear(), currentDate.getMonth());</p>
+<p style="line-height: 100%; margin-bottom: 0in">    });</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // --- MOBILE
+MENU ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const
+mobileMenuButton = document.getElementById('mobile-menu-button');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const mobileMenu
+= document.getElementById('mobile-menu');</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+mobileMenuButton.addEventListener('click', () =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+mobileMenu.classList.toggle('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    });</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // Close mobile
+menu when a link is clicked</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+document.querySelectorAll('#mobile-menu a').forEach(link =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+link.addEventListener('click', () =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">           
+mobileMenu.classList.add('hidden');</p>
+<p style="line-height: 100%; margin-bottom: 0in">        });</p>
+<p style="line-height: 100%; margin-bottom: 0in">    });</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // --- FADE-IN
+ANIMATION ON SCROLL ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const sections =
+document.querySelectorAll('.fade-in-section');</p>
+<p style="line-height: 100%; margin-bottom: 0in">    const observer =
+new IntersectionObserver((entries) =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+entries.forEach(entry =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">            if
+(entry.isIntersecting) {</p>
+<p style="line-height: 100%; margin-bottom: 0in">               
+entry.target.classList.add('is-visible');</p>
+<p style="line-height: 100%; margin-bottom: 0in">            }</p>
+<p style="line-height: 100%; margin-bottom: 0in">        });</p>
+<p style="line-height: 100%; margin-bottom: 0in">    }, { threshold:
+0.1 });</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+sections.forEach(section =&gt; observer.observe(section));</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    // ---
+INITIALIZE ON PAGE LOAD ---</p>
+<p style="line-height: 100%; margin-bottom: 0in">   
+window.addEventListener('load', () =&gt; {</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+document.getElementById('footer-year').textContent = new
+Date().getFullYear();</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+setLanguage('cs'); // Set initial language</p>
+<p style="line-height: 100%; margin-bottom: 0in">       
+renderCalendar(currentDate.getFullYear(), currentDate.getMonth());</p>
+<p style="line-height: 100%; margin-bottom: 0in">    });</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">    &lt;/script&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;/body&gt;</p>
+<p style="line-height: 100%; margin-bottom: 0in">&lt;/html&gt;</p>
+</body>
+</html>
